@@ -1,0 +1,61 @@
+<TabBar #tab [barTintColor]="'white'" [activeTab]="tabIndex" [ngStyle]="tabbarStyle" [tabBarPosition]="'bottom'">
+  <TabPane style="background-color: white; height: 100%" [title]='custom1'>
+    <ng-template #custom1>
+      <TabBarTab [title]="'首页'" [key]="'/tabs/home'" [icon]="icon1" (onPress)="tabPress($event)" [selectedIcon]="icon1">
+        <ng-template #icon1>
+          <i class="fa fa-home fa-lg"></i>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%;">
+      <ng-container>
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+      </ng-container>
+    </div>
+  </TabPane>
+  <TabPane style="background-color: white; height: 100%" [title]='custom2'>
+    <ng-template #custom2>
+      <TabBarTab [title]="'任务'" [key]="'/tabs/task'" [icon]="icon2" (onPress)="tabPress($event)" [selectedIcon]="icon2">
+        <ng-template #icon2>
+          <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%;">
+      <ng-container>
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+      </ng-container>
+    </div>
+  </TabPane>
+  <TabPane style="background-color: white; height: 100%" [title]='custom3'>
+    <ng-template #custom3>
+      <TabBarTab [title]="'项目'" [key]="'/tabs/project'" [icon]="icon3" (onPress)="tabPress($event)" [selectedIcon]="icon3">
+        <ng-template #icon3>
+          <i class="fa fa-building fa-lg" aria-hidden="true"></i>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%; ">
+      <ng-container>
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+      </ng-container>
+    </div>
+  </TabPane>
+  <TabPane style="background-color: white;  height: 100%" [title]='custom4'>
+    <ng-template #custom4>
+      <TabBarTab [title]="'我的'" [key]="'/tabs/my'" [icon]="icon4" (onPress)="tabPress($event)"  [selectedIcon]="icon4">
+        <ng-template #icon4>
+          <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i> </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%;">
+      <ng-container>
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+      </ng-container>
+    </div>
+  </TabPane>
+</TabBar>
+
+<ng-template #content>
+    <router-outlet></router-outlet>
+</ng-template>
